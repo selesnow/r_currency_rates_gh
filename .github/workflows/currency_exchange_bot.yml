@@ -20,7 +20,7 @@ jobs:
 
     - name: Install R packages
       run: |
-        Rscript -e 'install.packages(c("httr", "jsonlite", "telegram.bot"), repos="https://cran.rstudio.com/")'
+        Rscript -e 'install.packages(c("curl", "httr", "jsonlite", "telegram.bot"), repos="https://cran.rstudio.com/")'
 
     - name: Run R script
       env:
