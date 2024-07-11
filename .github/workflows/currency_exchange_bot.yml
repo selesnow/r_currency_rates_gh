@@ -2,7 +2,8 @@ name: Run R script daily
 
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '0 10 * * *'  # Ежедневно в 10:00 UTC
+    - cron: '0 17 * * *'  # Ежедневно в 19:00 по Каирскому времени
   workflow_dispatch:
 
 jobs:
@@ -12,6 +13,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      
+    - name: Set timezone to Cairo
+      uses: szenius/set-timezone@v2.0
+      with:
+        timezoneLinux: "Africa/Cairo"
+        
+    - name: Log current time
+      run: date
 
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
