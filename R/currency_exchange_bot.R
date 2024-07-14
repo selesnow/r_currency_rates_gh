@@ -20,7 +20,7 @@ send_telegram_message <- function(bot_token, chat_id, message) {
 api_key   <- Sys.getenv("EXCHANGE_RATE_API_KEY")
 bot_token <- Sys.getenv("TELEGRAM_BOT_TOKEN")
 chat_id   <- Sys.getenv("TELEGRAM_CHAT_ID")
-currency  <- "EUR"
+currency  <- "EGP"
 
 # Получение курса валют и отправка сообщения
 exchange_rate <- get_exchange_rate(api_key, currency)

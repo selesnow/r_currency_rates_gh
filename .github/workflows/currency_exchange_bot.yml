@@ -3,7 +3,7 @@ name: Run R script daily
 on:
   schedule:
     - cron: '0 10 * * *'  # Ежедневно в 10:00 UTC
-    - cron: '50 17 * * *'  # Ежедневно в 19:00 по Каирскому времени
+    - cron: '51 17 * * *'  # Ежедневно в 19:00 по Каирскому времени
   workflow_dispatch:
 
 jobs:
